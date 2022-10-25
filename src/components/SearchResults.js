@@ -13,23 +13,13 @@ export default function SearchResults() {
     const showRecipe = async function () {
       try {
         const res = await fetch(
-          "https://forkify-api.herokuapp.com/api/v2/recipes?search=pizza&key=<15a7ceee-3f1c-4fec-8521-15b7ea3ea5c1>"
+          `https://forkify-api.herokuapp.com/api/v2/recipes?search=banana&key=<26b2eb82-636a-4934-b57e-fee44ac0a136>`
         );
         const data = await res.json();
         console.log(data);
         if (!res.ok) throw new Error(`${data.message} (${res.status})`);
         let { recipe } = data.data;
-        recipe = {
-          title: recipe.title,
-          source_url: recipe.sourceUrl,
-          image_url: recipe.image,
-          publisher: recipe.publisher,
-          cooking_time: recipe.cookingTime,
-          servings: recipe.servings,
-          ingredients: recipe.ingredients,
-        };
-        const pas = [recipe];
-        dispatch(searchactions.changeResults(pas));
+        dispatch(searchactions.changeResults([recipe]));
       } catch (err) {
         alert(err);
       }
@@ -41,13 +31,14 @@ export default function SearchResults() {
   return (
     <div className="search-results">
       <ul className="results">
-        {false && (
+        {results.map((result) => (
           <Previews
-            image={results[1].image_url}
-            title={results[1].title}
-            publisher={results[1].publisher}
+            key={result.id}
+            image={result.image}
+            title={result.title}
+            publisher={result.publisher}
           />
-        )}
+        ))}
         ;
       </ul>
     </div>

@@ -2,7 +2,9 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 const initialSearchState = {
   searchInput: "",
-  results: [],
+  results: [
+    { image_url: "../img/logo.png", title: "ima here", publisher: "i am here" },
+  ],
 };
 const searchSlice = createSlice({
   name: "search",
