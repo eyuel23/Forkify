@@ -1,9 +1,16 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 const initialSearchState = {
+  best: false,
+  take: false,
   searchInput: "",
   results: [
-    { image_url: "../img/logo.png", title: "ima here", publisher: "i am here" },
+    {
+      id: 1,
+      image_url: "../img/logo.png",
+      title: "ima here",
+      publisher: "i am here",
+    },
   ],
 };
 const searchSlice = createSlice({
@@ -16,6 +23,9 @@ const searchSlice = createSlice({
     },
     changeResults(state, action) {
       state.results = action.payload;
+    },
+    changeBest(state, action) {
+      state.best = true;
     },
   },
 });

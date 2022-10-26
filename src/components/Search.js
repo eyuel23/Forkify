@@ -7,6 +7,7 @@ export default function Search() {
   const dispatch = useDispatch();
 
   const submitHandler = (event) => {
+    dispatch(searchactions.changeBest());
     event.preventDefault();
   };
   const inputHandler = (event) => {
@@ -22,7 +23,7 @@ export default function Search() {
         placeholder="Search over 1,000,000 recipes..."
         onChange={inputHandler}
       />
-      <button type="submit" className="btn search__btn">
+      <button onClick={submitHandler} type="submit" className="btn search__btn">
         <svg className="search__icon">
           <use href={require("../img/icons.svg#icon-search")}></use>
         </svg>

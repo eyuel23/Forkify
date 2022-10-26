@@ -2,8 +2,11 @@ import React from "react";
 import img from "../img/logo.png";
 
 export default function Previews(props) {
+  const previewHandler = (event) => {
+    console.log(event.target.closest("li").id);
+  };
   return (
-    <li className="preview">
+    <li id={props.id} onClick={previewHandler} className="preview">
       <a className="preview__link preview__link--active" href="#23456">
         <figure className="preview__fig">
           <img src={img} alt="Test" />
