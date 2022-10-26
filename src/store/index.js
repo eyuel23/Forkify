@@ -12,6 +12,7 @@ const initialSearchState = {
       publisher: "i am here",
     },
   ],
+  fullInfo: [],
 };
 const searchSlice = createSlice({
   name: "search",
@@ -26,6 +27,9 @@ const searchSlice = createSlice({
     },
     changeBest(state, action) {
       state.best = true;
+    },
+    changeFullInfo(state, action) {
+      state.fullInfo = action.payload;
     },
   },
 });

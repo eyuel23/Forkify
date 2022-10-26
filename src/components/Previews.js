@@ -1,9 +1,16 @@
 import React from "react";
 import img from "../img/logo.png";
+import { searchactions } from "../store/index.js";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Previews(props) {
+  const dispatch = useDispatch();
+  const result = useSelector((state) => state.search.results);
+
   const previewHandler = (event) => {
-    console.log(event.target.closest("li").id);
+    const clickedId = event.target.closest("li").id;
+    const info = result.reduce((results) => results.id === clickedId);
+    dispatch(searchactions.changeFullInfo(info));
   };
   return (
     <li id={props.id} onClick={previewHandler} className="preview">

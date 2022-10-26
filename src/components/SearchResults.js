@@ -15,14 +15,13 @@ export default function SearchResults() {
         `https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bc886?key=<76cc8006-d290-4b6b-b562-faf6217f4bbf>`
       );
       const data = await res.json();
-      console.log(data);
+
       if (!res.ok) throw new Error(`${data.message} (${res.status})`);
       let { recipe } = data.data;
       dispatch(searchactions.changeResults([recipe]));
     } catch (err) {
       alert(err);
     }
-    console.log(results);
   };
 
   useEffect(() => {
