@@ -20,7 +20,7 @@ export default function Search() {
         type="text"
         className="search__field"
         placeholder="Search over 1,000,000 recipes..."
-        onSubmit={inputHandler}
+        onChange={inputHandler}
       />
       <button type="submit" className="btn search__btn">
         <svg className="search__icon">
