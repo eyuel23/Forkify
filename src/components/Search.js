@@ -5,16 +5,16 @@ import "../sass/main.scss";
 
 export default function Search() {
   const dispatch = useDispatch();
-
+  let value;
   const submitHandler = (event) => {
     dispatch(searchactions.changeBest());
     event.preventDefault();
-  };
-  const inputHandler = (event) => {
-    const value = event.target.value;
     dispatch(searchactions.newSearchInput(value));
   };
-
+  const inputHandler = (event) => {
+    value = event.target.value;
+  };
+  console.log(value);
   return (
     <form className="search" onSubmit={submitHandler}>
       <input

@@ -5,7 +5,7 @@ const initialSearchState = {
   take: false,
   searchInput: "",
   results: [],
-  fullInfo: {},
+  fullInfo: [],
 };
 const searchSlice = createSlice({
   name: "search",

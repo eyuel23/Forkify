@@ -10,7 +10,7 @@ export default function Previews(props) {
   const previewHandler = (event) => {
     event.preventDefault();
     const clickedId = event.target.closest("li").id;
-    const info = result.reduce((results) => results.id === clickedId);
+    const info = result.filter((filter) => filter.id === clickedId);
     dispatch(searchactions.changeFullInfo(info));
     dispatch(searchactions.changeTake());
   };
