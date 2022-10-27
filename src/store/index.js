@@ -4,15 +4,8 @@ const initialSearchState = {
   best: false,
   take: false,
   searchInput: "",
-  results: [
-    {
-      id: 1,
-      image_url: "../img/logo.png",
-      title: "ima here",
-      publisher: "i am here",
-    },
-  ],
-  fullInfo: [],
+  results: [],
+  fullInfo: {},
 };
 const searchSlice = createSlice({
   name: "search",
@@ -30,6 +23,9 @@ const searchSlice = createSlice({
     },
     changeFullInfo(state, action) {
       state.fullInfo = action.payload;
+    },
+    changeTake(state) {
+      state.take = true;
     },
   },
 });

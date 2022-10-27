@@ -8,9 +8,11 @@ export default function Previews(props) {
   const result = useSelector((state) => state.search.results);
 
   const previewHandler = (event) => {
+    event.preventDefault();
     const clickedId = event.target.closest("li").id;
     const info = result.reduce((results) => results.id === clickedId);
     dispatch(searchactions.changeFullInfo(info));
+    dispatch(searchactions.changeTake());
   };
   return (
     <li id={props.id} onClick={previewHandler} className="preview">
