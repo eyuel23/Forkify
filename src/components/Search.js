@@ -14,7 +14,7 @@ export default function Search() {
   const inputHandler = (event) => {
     value = event.target.value;
   };
-  console.log(value);
+
   return (
     <form className="search" onSubmit={submitHandler}>
       <input

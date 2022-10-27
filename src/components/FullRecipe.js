@@ -1,11 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
+
 import "../sass/main.scss";
 import Ingredient from "./Ingredient";
 
 export default function FullRecipe() {
   const fullInfo = useSelector((state) => state.search.fullInfo);
-  console.log(fullInfo);
+
   return (
     <div className="recipe">
       <figure className="recipe__fig">

@@ -5,6 +5,7 @@ const initialSearchState = {
   take: false,
   searchInput: "",
   results: [],
+  fullInfoId: "",
   fullInfo: [],
 };
 const searchSlice = createSlice({
@@ -18,14 +19,17 @@ const searchSlice = createSlice({
     changeResults(state, action) {
       state.results = action.payload;
     },
-    changeBest(state, action) {
+    changeBest(state) {
       state.best = true;
     },
-    changeFullInfo(state, action) {
-      state.fullInfo = action.payload;
+    changeFullInfoId(state, action) {
+      state.fullInfoId = action.payload;
     },
     changeTake(state) {
       state.take = true;
+    },
+    changeFullInfo(state, action) {
+      state.fullInfo = action.payload;
     },
   },
 });

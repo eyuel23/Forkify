@@ -23,7 +23,7 @@ export default function SearchResults() {
       alert(err);
     }
   };
-  console.log(results);
+
   useEffect(() => {
     if (best) {
       showRecipe();
