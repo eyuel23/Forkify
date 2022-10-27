@@ -3,6 +3,7 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
 const initialSearchState = {
   best: false,
   take: false,
+  need: false,
   searchInput: "",
   results: [],
   fullInfoId: "",
@@ -30,6 +31,9 @@ const searchSlice = createSlice({
     },
     changeFullInfo(state, action) {
       state.fullInfo = action.payload;
+    },
+    changeNeed(state) {
+      state.need = true;
     },
   },
 });

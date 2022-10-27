@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-
+import sprite from "../img/icons.svg";
 import "../sass/main.scss";
 import Ingredient from "./Ingredient";
 
@@ -19,7 +19,7 @@ export default function FullRecipe() {
       <div className="recipe__details">
         <div className="recipe__info">
           <svg className="recipe__info-icon">
-            <use href="../img/icons.svg#icon-clock"></use>
+            <use href={sprite + "#icon-clock"}></use>
           </svg>
           <span className="recipe__info-data recipe__info-data--minutes">
             {fullInfo.cooking_time}
@@ -28,7 +28,7 @@ export default function FullRecipe() {
         </div>
         <div className="recipe__info">
           <svg className="recipe__info-icon">
-            <use href="../img/icons.svg#icon-users"></use>
+            <use href={sprite + "#icon-users"}></use>
           </svg>
           <span className="recipe__info-data recipe__info-data--people">
             {fullInfo.servings}
@@ -38,12 +38,12 @@ export default function FullRecipe() {
           <div className="recipe__info-buttons">
             <button className="btn--tiny btn--increase-servings">
               <svg>
-                <use href="../img/icons.svg#icon-minus-circle"></use>
+                <use href={sprite + "#icon-minus-circle"}></use>
               </svg>
             </button>
             <button className="btn--tiny btn--increase-servings">
               <svg>
-                <use href="../img/icons.svg#icon-plus-circle"></use>
+                <use href={sprite + "#icon-plus-circle"}></use>
               </svg>
             </button>
           </div>
@@ -56,7 +56,7 @@ export default function FullRecipe() {
         </div>
         <button className="btn--round">
           <svg className="">
-            <use href="../img/icons.svg#icon-bookmark-fill"></use>
+            <use href={sprite + "#icon-bookmark-fill"}></use>
           </svg>
         </button>
       </div>
@@ -67,7 +67,7 @@ export default function FullRecipe() {
           {fullInfo.ingredients.map((recipe) => {
             return (
               <Ingredient
-                key={recipe.description}
+                key={recipe.id}
                 description={recipe.description}
                 unit={recipe.unit}
                 quantity={recipe.quantity}
@@ -91,7 +91,7 @@ export default function FullRecipe() {
         >
           <span>Directions</span>
           <svg className="search__icon">
-            <use href="../img/icons.svg#icon-arrow-right"></use>
+            <use href={sprite + "#icon-arrow-right"}></use>
           </svg>
         </a>
       </div>

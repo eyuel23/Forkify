@@ -41,7 +41,7 @@ export default function SearchResults() {
                 <Previews
                   key={result.id}
                   id={result.id}
-                  image={result.image}
+                  image={result.image_url}
                   title={result.title}
                   publisher={result.publisher}
                 />

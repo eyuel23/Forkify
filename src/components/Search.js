@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { searchactions } from "../store";
+import sprite from "../img/icons.svg";
 import "../sass/main.scss";
 
 export default function Search() {
@@ -25,7 +26,7 @@ export default function Search() {
       />
       <button onClick={submitHandler} type="submit" className="btn search__btn">
         <svg className="search__icon">
-          <use href={require("../img/icons.svg#icon-search")}></use>
+          <use href={sprite + "#icon-search"}></use>
         </svg>
         <span>Search</span>
       </button>

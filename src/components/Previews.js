@@ -1,19 +1,20 @@
 import React, { useEffect } from "react";
-import img from "../img/logo.png";
 import { searchactions } from "../store/index.js";
 import { useDispatch, useSelector } from "react-redux";
-
+import sprite from "../img/icons.svg";
 export default function Previews(props) {
   const dispatch = useDispatch();
   const fullInfoId = useSelector((state) => state.search.fullInfoId);
-  const take = useSelector((state) => state.search.take);
+  const need = useSelector((state) => state.search.need);
   const previewHandler = (event) => {
     event.preventDefault();
     const clickedId = event.target.closest("li").id;
-    dispatch(searchactions.changeTake());
     dispatch(searchactions.changeFullInfoId(clickedId));
+    dispatch(searchactions.changeNeed());
+    setTimeout(() => {
+      dispatch(searchactions.changeTake());
+    }, 1000);
   };
-
   const showRecipe = async function () {
     try {
       const res = await fetch(
@@ -31,25 +32,25 @@ export default function Previews(props) {
     console.log("preview");
   };
   useEffect(() => {
-    if (take) {
+    if (need) {
       showRecipe();
     } else {
       return;
     }
-  }, [fullInfoId, take]);
+  }, [fullInfoId, need]);
 
   return (
     <li id={props.id} onClick={previewHandler} className="preview">
       <a className="preview__link preview__link--active" href="#23456">
         <figure className="preview__fig">
-          <img src={img} alt="Test" />
+          <img src={props.image_url} alt="Test" />
         </figure>
         <div className="preview__data">
           <h4 className="preview__title">{props.title}</h4>
           <p className="preview__publisher">{props.publisher}</p>
           <div className="preview__user-generated">
             <svg>
-              <use href="src/img/icons.svg#icon-user"></use>
+              <use href={sprite + "#icon-user"}></use>
             </svg>
           </div>
         </div>

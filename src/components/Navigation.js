@@ -2,6 +2,7 @@ import React from "react";
 import "../sass/main.scss";
 import logo from "../img/logo.png";
 import Search from "./Search";
+import sprite from "../img/icons.svg";
 
 export default function Navigation() {
   return (
@@ -13,7 +14,7 @@ export default function Navigation() {
           <li className="nav__item">
             <button className="nav__btn nav__btn--add-recipe">
               <svg className="nav__icon">
-                <use href="src/img/icons.svg#icon-edit"></use>
+                <use href={sprite + "#icon-edit"}></use>
               </svg>
               <span>Add recipe</span>
             </button>
@@ -21,7 +22,7 @@ export default function Navigation() {
           <li className="nav__item">
             <button className="nav__btn nav__btn--bookmarks">
               <svg className="nav__icon">
-                <use href="src/img/icons.svg#icon-bookmark"></use>
+                <use href={sprite + "#icon-bookmark"}></use>
               </svg>
               <span>Bookmarks</span>
             </button>
@@ -30,7 +31,7 @@ export default function Navigation() {
                 <div className="message">
                   <div>
                     <svg>
-                      <use href="src/img/icons.svg#icon-smile"></use>
+                      <use href={sprite + "#icon-smile"}></use>
                     </svg>
                   </div>
                   <p>No bookmarks yet. Find a nice recipe and bookmark it :)</p>
