@@ -11,9 +11,6 @@ export default function Previews(props) {
     const clickedId = event.target.closest("li").id;
     dispatch(searchactions.changeFullInfoId(clickedId));
     dispatch(searchactions.changeNeed());
-    setTimeout(() => {
-      dispatch(searchactions.changeTake());
-    }, 1000);
   };
   const showRecipe = async function () {
     try {
@@ -21,15 +18,14 @@ export default function Previews(props) {
         `https://forkify-api.herokuapp.com/api/v2/recipes/${fullInfoId}?key<cdb4e5a8-6f81-457e-9d71-c58393b34ec5></cdb4e5a8-6f81-457e-9d71-c58393b34ec5>`
       );
       const data = await res.json();
-      console.log("preview", data);
       if (!res.ok) throw new Error(`${data.message} (${res.status})`);
-
+      console.log(data);
       let { recipe } = data.data;
       dispatch(searchactions.changeFullInfo(recipe));
+      dispatch(searchactions.changeTake());
     } catch (err) {
       alert(err);
     }
-    console.log("preview");
   };
   useEffect(() => {
     if (need) {
