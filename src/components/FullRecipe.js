@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { searchactions } from "../store/index.js";
-import sprite from "../img/icons.svg";
 import "../sass/main.scss";
-import Ingredient from "./Ingredient";
 import Message from "./message.js";
 import RecipeDetals from "./RecipeDetails.js";
 

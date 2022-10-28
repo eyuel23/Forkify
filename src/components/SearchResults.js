@@ -46,8 +46,6 @@ export default function SearchResults() {
                   publisher={result.publisher}
                 />
               );
-            } else {
-              return;
             }
           })}
         ;

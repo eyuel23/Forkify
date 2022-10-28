@@ -87,7 +87,7 @@ export default function RecipeDetals(props) {
         <a
           className="btn--small recipe__btn"
           href="http://thepioneerwoman.com/cooking/pasta-with-tomato-cream-sauce/"
-          target="_blank"
+          rel="noreferrer"
         >
           <span>Directions</span>
           <svg className="search__icon">
