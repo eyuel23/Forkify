@@ -9,28 +9,28 @@ export default function SearchResults() {
   const best = useSelector((state) => state.search.best);
   const results = useSelector((state) => state.search.results);
   const dispatch = useDispatch();
-  const showRecipe = async function () {
-    try {
-      const res = await fetch(
-        `https://forkify-api.herokuapp.com/api/v2/recipes?search=${searchInput}`
-      );
-      const data = await res.json();
-      if (!res.ok) throw new Error(`${data.message} (${res.status})`);
-      console.log(data);
-      let { recipes } = data.data;
-      dispatch(searchactions.changeResults(recipes));
-    } catch (err) {
-      alert(err);
-    }
-  };
 
   useEffect(() => {
+    const showRecipe = async function () {
+      try {
+        const res = await fetch(
+          `https://forkify-api.herokuapp.com/api/v2/recipes?search=${searchInput}`
+        );
+        const data = await res.json();
+        if (!res.ok) throw new Error(`${data.message} (${res.status})`);
+        console.log(data);
+        let { recipes } = data.data;
+        dispatch(searchactions.changeResults(recipes));
+      } catch (err) {
+        alert(err);
+      }
+    };
     if (best) {
       showRecipe();
     } else {
       return;
     }
-  }, [searchInput, best]);
+  }, [searchInput, best, dispatch]);
   return (
     <div className="search-results">
       <ul className="results">
@@ -46,6 +46,8 @@ export default function SearchResults() {
                   publisher={result.publisher}
                 />
               );
+            } else {
+              return null;
             }
           })}
         ;
