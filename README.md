@@ -1,6 +1,6 @@
 <div align="center">
 <a href="https://forkify-v2.netlify.app/" target="_blank">
-  <img alt="Logo" src="https://raw.githubusercontent.com/eyuel23/DigitalLife/main/src/img/favicon.png" width="100" />
+  <img alt="Logo" src="https://raw.githubusercontent.com/eyuel23/Forkify/main/src/img/favicon.png" width="100" />
   </a>
 </div>
 <h1 align="center">
@@ -11,7 +11,7 @@
 </p>
 <p align="center">
   <a href="https://forkify-v2.netlify.app/" target="_blank">
-    <img src="https://raw.githubusercontent.com/eyuel23/DigitalLife/main/src/img/logo.png" alt="vercel status"  width="300"/>
+    <img src="https://raw.githubusercontent.com/eyuel23/Forkify/main/src/img/logo.png" alt="vercel status"  width="300"/>
   </a>
 </p>
 # Getting Started with Create React App
