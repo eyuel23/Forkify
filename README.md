@@ -1,3 +1,19 @@
+<div align="center">
+<a href="https://forkify-v2.netlify.app/" target="_blank">
+  <img alt="Logo" src="https://raw.githubusercontent.com/eyuel23/DigitalLife/main/src/img/favicon.png" width="100" />
+  </a>
+</div>
+<h1 align="center">
+  forkify-v2.netlify.app - Forkify
+</h1>
+<p align="center">
+  A Meal recipe app with 100+ recipes you can find<a href="https://forkify-v2.netlify.app/" target="_blank">forkify-v2.netlify.app</a> built with <a href="https://reactjs.org/" target="_blank">React-js</a> and hosted with <a href="https://www.netlify.com/" target="_blank">netlify</a>
+</p>
+<p align="center">
+  <a href="https://forkify-v2.netlify.app/" target="_blank">
+    <img src="https://raw.githubusercontent.com/eyuel23/DigitalLife/main/src/img/logo.png" alt="vercel status"  width="300"/>
+  </a>
+</p>
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
